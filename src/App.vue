@@ -7,13 +7,15 @@
 
             <el-main>
                 <el-row :gutter="20">
-                    <el-col :span="12" style="height: 300px;"><Editor/></el-col>
-                    <el-col :span="12" style="height: 300px;"><Result/></el-col>
+                    <el-col :span="12"><Editor/></el-col>
+                    <el-col :span="12"><Result/></el-col>
                 </el-row>
             </el-main>
+
             <el-footer>
                 <Footer/>
             </el-footer>
+
         </el-container>
     </div>
 </template>
