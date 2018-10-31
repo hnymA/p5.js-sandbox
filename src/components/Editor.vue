@@ -5,11 +5,10 @@
 
 <script>
     export default {
-        name: "Editor",
         data () {
             return {
-                msg: 'Editor'
-            }
+                name: "Editor",
+           }
         },
         mounted () {
             this.editor = window.ace.edit("editor")
@@ -18,6 +17,14 @@
             this.editor.getSession().setMode("ace/mode/javascript");
             this.editor.getSession().setUseWrapMode(true);
             this.editor.getSession().setTabSize(2);
+        },
+        methods: {
+            clear: function () {
+                this.editor.setValue("")
+            },
+            getText: function () {
+                return this.editor.getValue()
+            }
         }
     }
 </script>

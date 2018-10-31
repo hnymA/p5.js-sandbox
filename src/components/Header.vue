@@ -6,9 +6,9 @@
 
 <script>
     export default {
-        name: "Header",
         data () {
             return {
+                name: "Header",
                 msg: 'p5.js sandbox'
             }
         }
