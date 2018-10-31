@@ -10,12 +10,25 @@
             return {
                 name: "Result",
                 msg: 'Result',
-                htmlDoc: ''
+                htmlDoc:
+                    '<!DOCTYPE html>' +
+                    '<html lang=\'ja\'>' +
+                    '<head>' +
+                    '<meta charset=\'utf-8\'>' +
+                    '</head>' +
+                    '<body>' +
+                    '<script src=\'static/p5.js/p5.min.js\'\><\/script>' +
+                    '<script><\/script>' +
+                    '</body>'+
+                    '</html>'
             }
         },
         methods: {
             updateText: function(text){
-                this.htmlDoc = text;
+                this.htmlDoc = this.htmlDoc.replace(/<script>[\s\S]*<\/script>/, '<script>' + text + '<\/script>')
+                this.$nextTick(function () {
+                    this.$forceUpdate();
+                })
             },
         }
     }
