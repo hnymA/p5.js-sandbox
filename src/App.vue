@@ -7,15 +7,18 @@
 
             <el-main>
                 <el-row :gutter="20">
-                    <el-col :span="12"><Editor/></el-col>
-                    <el-col :span="12"><Result/></el-col>
+                    <el-col :span="12">
+                        <EditArea/>
+                    </el-col>
+                    <el-col :span="12">
+                        <Result/>
+                    </el-col>
                 </el-row>
             </el-main>
 
             <el-footer>
                 <Footer/>
             </el-footer>
-
         </el-container>
     </div>
 </template>
@@ -24,8 +27,8 @@
     import HelloWorld from './components/HelloWorld'
     import Header from './components/Header'
     import Footer from './components/Footer'
-    import Editor from './components/Editor'
     import Result from './components/Result'
+    import EditArea from './components/EditArea'
 
     export default {
         name: 'App',
@@ -33,8 +36,8 @@
             HelloWorld,
             Header,
             Footer,
-            Editor,
-            Result
+            Result,
+            EditArea
         }
     }
 </script>

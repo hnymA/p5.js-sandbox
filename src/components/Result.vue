@@ -6,9 +6,9 @@
 
 <script>
     export default {
-        name: "Result",
         data () {
             return {
+                name: "Result",
                 msg: 'Result'
             }
         }
