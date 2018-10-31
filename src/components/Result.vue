@@ -1,5 +1,5 @@
 <template>
-    <div class="result">
+    <div id="result">
         <h2>{{ msg }}</h2>
     </div>
 </template>
@@ -16,7 +16,8 @@
 </script>
 
 <style scoped>
-    .result {
+    #result {
         border: solid black 3px;
+        height: 600px;
     }
 </style>
