@@ -1,6 +1,6 @@
 <template>
     <div id="result">
-        <h2>{{ msg }}</h2>
+        <iframe id="resultFrame" frameborder="0" :srcdoc="htmlDoc"></iframe>
     </div>
 </template>
 
@@ -9,8 +9,14 @@
         data () {
             return {
                 name: "Result",
-                msg: 'Result'
+                msg: 'Result',
+                htmlDoc: ''
             }
+        },
+        methods: {
+            updateText: function(text){
+                this.htmlDoc = text;
+            },
         }
     }
 </script>
@@ -19,5 +25,10 @@
     #result {
         border: solid black 3px;
         height: 600px;
+    }
+
+    #resultFrame {
+        width: 100%;
+        height: 100%;
     }
 </style>

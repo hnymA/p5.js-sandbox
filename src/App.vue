@@ -8,10 +8,10 @@
             <el-main>
                 <el-row :gutter="20">
                     <el-col :span="12">
-                        <EditArea/>
+                        <EditArea @update-text="updateText"/>
                     </el-col>
                     <el-col :span="12">
-                        <Result/>
+                        <Result ref="result"/>
                     </el-col>
                 </el-row>
             </el-main>
@@ -38,6 +38,11 @@
             Footer,
             Result,
             EditArea
+        },
+        methods: {
+            updateText: function(code){
+                this.$refs.result.updateText(code);
+            }
         }
     }
 </script>

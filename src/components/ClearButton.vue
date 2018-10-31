@@ -1,6 +1,6 @@
 <template>
     <div id="ClearButton">
-        <el-button icon="el-icon-delete" v-on:click="clear">{{ msg }}</el-button>
+        <el-button icon="el-icon-delete" @click="clear">{{ msg }}</el-button>
     </div>
 </template>
 

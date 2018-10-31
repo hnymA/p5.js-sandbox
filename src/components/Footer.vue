@@ -6,9 +6,9 @@
 
 <script>
     export default {
-        name: "Header",
         data () {
             return {
+                name: "Footer",
                 msg: 'Copyright © 2018 Kaisei Hanayama. All Rights Reserved.'
             }
         }
