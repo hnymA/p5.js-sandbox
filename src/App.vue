@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <el-container>
-            <el-header style="height: 100px;">
+            <el-header>
                 <Header/>
             </el-header>
 
@@ -54,6 +54,6 @@
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #2c3e50;
-        margin-top: 60px;
+        margin-top: 30px;
     }
 </style>
