@@ -6,10 +6,10 @@
         <el-row type="flex" justify="space-around">
             <el-col :span="6"></el-col>
             <el-col :span="6">
-                <ClearButton v-on:clear-text="clearText"/>
+                <ClearButton @clear-text="clearText"/>
             </el-col>
             <el-col :span="6">
-                <ExecuteButton v-on:execute-program="executeProgram"/>
+                <ExecuteButton @execute-program="executeProgram"/>
             </el-col>
             <el-col :span="6"></el-col>
         </el-row>
@@ -39,6 +39,7 @@
             },
             executeProgram: function(){
                 const code = this.$refs.editor.getText();
+                this.$emit('update-text', code);
             }
         }
     }

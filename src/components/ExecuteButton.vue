@@ -1,6 +1,6 @@
 <template>
     <div id="executeButton">
-        <el-button type="primary" icon="el-icon-caret-right" v-on:click="execute">{{ msg }}</el-button>
+        <el-button type="primary" icon="el-icon-caret-right" @click="execute">{{ msg }}</el-button>
     </div>
 </template>
 
