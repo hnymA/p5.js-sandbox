@@ -14,7 +14,7 @@
         },
         methods: {
             clear: function () {
-                this.$emit('clear-text')
+                this.$emit('pushed-clear-button')
             }
         }
     }

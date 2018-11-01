@@ -14,7 +14,7 @@
         },
         methods: {
             execute: function () {
-                this.$emit('execute-program')
+                this.$emit('pushed-execute-button')
             }
         }
     }
