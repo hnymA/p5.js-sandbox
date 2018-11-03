@@ -14,6 +14,11 @@
                         <Result ref="result"/>
                     </el-col>
                 </el-row>
+
+                <hr>
+
+                <SampleProjectArea/>
+
             </el-main>
 
             <el-footer>
@@ -29,6 +34,7 @@
     import Footer from './components/Footer'
     import Result from './components/Result'
     import EditArea from './components/EditArea'
+    import SampleProjectArea from './components/SampleProjectArea'
 
     export default {
         name: 'App',
@@ -37,10 +43,11 @@
             Header,
             Footer,
             Result,
-            EditArea
+            EditArea,
+            SampleProjectArea
         },
         methods: {
-            updateText: function(code){
+            updateText: function (code) {
                 this.$refs.result.updateText(code);
             }
         }
