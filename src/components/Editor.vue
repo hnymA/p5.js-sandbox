@@ -11,7 +11,7 @@
            }
         },
         mounted () {
-            this.editor = window.ace.edit("editor")
+            this.editor = window.ace.edit("editor");
             this.editor.setTheme("ace/theme/monokai");
             this.editor.setFontSize(20);
             this.editor.getSession().setMode("ace/mode/javascript");
@@ -20,10 +20,13 @@
         },
         methods: {
             clear: function () {
-                this.editor.setValue("")
+                this.editor.setValue("");
             },
-            getText: function () {
-                return this.editor.getValue()
+            getCode: function () {
+                return this.editor.getValue();
+            },
+            setCode: function (code) {
+                this.editor.setValue(code);
             }
         }
     }

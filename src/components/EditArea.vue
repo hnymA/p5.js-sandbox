@@ -42,11 +42,14 @@
                 this.$refs.clearMessage.confirm()
             },
             pushedExecuteButton: function(){
-                const code = this.$refs.editor.getText();
+                const code = this.$refs.editor.getCode();
                 this.$emit('update-text', code);
             },
             confirmedClearText: function(){
                 this.$refs.editor.clear()
+            },
+            setCode: function(code){
+                this.$refs.editor.setCode(code)
             }
         }
     }
