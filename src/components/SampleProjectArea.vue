@@ -90,7 +90,7 @@
                 </el-row>
             </el-collapse-item>
 
-            <el-collapse-item title="Sin & Cos" name="6">
+            <el-collapse-item title="Sin & Cos & DOM" name="6">
                 <el-row :gutter="20" type="flex" justify="space-around">
                     <el-col :span="4">
                         <SampleProjectButton id="6-1" title="Sin & Cos Basic 1" @update-code="setCode"/>
@@ -100,6 +100,29 @@
                     </el-col>
                     <el-col :span="4">
                         <SampleProjectButton id="6-3" title="Mouseround" @update-code="setCode"/>
+                    </el-col>
+                    <el-col :span="4">
+                        <SampleProjectButton id="6-4" title="Slider Interaction" @update-code="setCode"/>
+                    </el-col>
+                    <el-col :span="4">
+                        <SampleProjectButton id="6-5" title="Button Interaction" @update-code="setCode"/>
+                    </el-col>
+                </el-row>
+            </el-collapse-item>
+
+            <el-collapse-item title="Further Step" name="7">
+                <el-row :gutter="20" type="flex" justify="space-around">
+                    <el-col :span="4">
+                        <SampleProjectButton id="7-1" title="Trajectory" @update-code="setCode"/>
+                    </el-col>
+                    <el-col :span="4">
+                        <SampleProjectButton id="7-2" title="Spotlight" @update-code="setCode"/>
+                    </el-col>
+                    <el-col :span="4">
+                        <SampleProjectButton id="7-3" title="Randomized Circular" @update-code="setCode"/>
+                    </el-col>
+                    <el-col :span="4">
+                        <SampleProjectButton id="7-4" title="Wave Creator" @update-code="setCode"/>
                     </el-col>
                 </el-row>
             </el-collapse-item>

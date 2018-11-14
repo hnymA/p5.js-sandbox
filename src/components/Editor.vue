@@ -16,7 +16,7 @@
             this.editor.setFontSize(20);
             this.editor.getSession().setMode("ace/mode/javascript");
             this.editor.getSession().setUseWrapMode(true);
-            this.editor.getSession().setTabSize(2);
+            this.editor.getSession().setTabSize(4);
         },
         methods: {
             clear: function () {

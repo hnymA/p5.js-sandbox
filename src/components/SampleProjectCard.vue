@@ -109,7 +109,22 @@
                         return 'マウスとsin関数・cos関数を用いた図形の描画について勉強しましょう。';
 
                     case '6-4':
-                        return '';
+                        return 'スライダーの使い方について勉強しましょう。';
+
+                    case '6-5':
+                        return 'ボタンの使い方について勉強しましょう。';
+
+                    case '7-1':
+                        return '軌跡を描画する方法について勉強しましょう。';
+
+                    case '7-2':
+                        return 'グリッドを使った図形の描画について勉強しましょう。';
+
+                    case '7-3':
+                        return 'ランダムに線を引き円形を描画する方法について勉強しましょう。';
+
+                    case '7-4':
+                        return 'ボタンを使ったインタラクティブな図形の描画について勉強しましょう。';
 
                     default:
                         return 'UNDEF';
@@ -127,8 +142,12 @@
                             '// その後に繰り返し実行される処理\n' +
                             'function draw() {\n' +
                             '    // 四角形の描画\n' +
-                            '    // 左上のX座標, 左上のY座標, 右下のX座標, 右下のY座標）\n' +
+                            '    // (左上のX座標, 左上のY座標, 右下へのX方向の距離, 右下へのY方向の距離）\n' +
                             '    rect(100, 100, 150, 150);\n' +
+                            '    \n' +
+                            '    // 線の描画\n' +
+                            '    // (左上のX座標, 左上のY座標, 右下へのX座標, 右下のY座標）\n' +
+                            '    line(80, 80, 200, 200);\n' +
                             '}\n';
 
                     case '1-2':
@@ -238,7 +257,7 @@
                             '    background(\'red\');            // 色名による指定\n' +
                             '    // background(\'#ff0000\');        // 16進数による指定\n' +
                             '    // background(\'rgb(255, 0, 0)\'); // RGB表記による指定\n' +
-                            '}';
+                            '}\n';
 
                     case '2-5':
                         return 'function setup() {\n' +
@@ -570,6 +589,225 @@
                             '    pop();\n' +
                             '    \n' +
                             '    angle += 5;\n' +
+                            '}\n';
+
+                    case '6-4':
+                        return 'var angle = 0;\n' +
+                            'var radius = 50;\n' +
+                            'var slider;       // 半径を変更するスライダー\n' +
+                            '\n' +
+                            'function setup() {\n' +
+                            '    createCanvas(640, 480);\n' +
+                            '    noStroke();\n' +
+                            '    background(\'orange\');\n' +
+                            '\n' +
+                            '    // スライダーを作成\n' +
+                            '    // createSlider(最小値, 最大値, 初期値)\n' +
+                            '    slider = createSlider(0, 100, 50);\n' +
+                            '\n' +
+                            '    // (30, 30)の位置にスライダーを設置\n' +
+                            '    slider.position(30, 30);\n' +
+                            '}\n' +
+                            '\n' +
+                            'function draw() {\n' +
+                            '    background(\'orange\');\n' +
+                            '\n' +
+                            '    // 半径をスライダーの値に\n' +
+                            '    radius = slider.value();\n' +
+                            '\n' +
+                            '    x = sin(radians(angle)) * radius;\n' +
+                            '    y = cos(radians(angle)) * radius;\n' +
+                            '\n' +
+                            '    // 横方向\n' +
+                            '    push();\n' +
+                            '    fill(\'blue\');\n' +
+                            '    translate(width/2, height/2);\n' +
+                            '    ellipse(x, 0, 10, 10);\n' +
+                            '    pop();\n' +
+                            '\n' +
+                            '    // 縦方向\n' +
+                            '    push();\n' +
+                            '    fill(\'green\');\n' +
+                            '    translate(width/2, height/2);\n' +
+                            '    ellipse(0, y, 10, 10);\n' +
+                            '    pop();\n' +
+                            '\n' +
+                            '    angle += 3;\n' +
+                            '}\n';
+
+                    case '6-5':
+                        return 'var angle = 0;\n' +
+                            'var radius = 50;\n' +
+                            'var button;   // 半径を変更するボタン\n' +
+                            '\n' +
+                            'function setup() {\n' +
+                            '    createCanvas(640, 480);\n' +
+                            '    noStroke();\n' +
+                            '    background(\'orange\');\n' +
+                            '    \n' +
+                            '    // ボタンを作成\n' +
+                            '    button = createButton(\'Add Radius\');\n' +
+                            '    button.position(30, 30);\n' +
+                            '    \n' +
+                            '    // ボタンが押されたときに呼び出される関数を指定\n' +
+                            '    button.mousePressed(addRadius);\n' +
+                            '}\n' +
+                            '\n' +
+                            'function draw() {\n' +
+                            '    background(\'orange\');\n' +
+                            '    x = sin(radians(angle)) * radius;\n' +
+                            '    y = cos(radians(angle)) * radius;\n' +
+                            '\n' +
+                            '    // 横方向\n' +
+                            '    push();\n' +
+                            '    fill(\'blue\');\n' +
+                            '    translate(width/2, height/2);\n' +
+                            '    ellipse(x, 0, 10, 10);\n' +
+                            '    pop();\n' +
+                            '    \n' +
+                            '    // 縦方向\n' +
+                            '    push();\n' +
+                            '    fill(\'green\');\n' +
+                            '    translate(width/2, height/2);\n' +
+                            '    ellipse(0, y, 10, 10);\n' +
+                            '    pop();\n' +
+                            '    \n' +
+                            '    angle += 3;\n' +
+                            '}\n' +
+                            '\n' +
+                            'function addRadius() {\n' +
+                            '    radius += random(1, 10);\n' +
+                            '}\n';
+
+
+                    case '7-1':
+                        return 'function setup() {\n' +
+                            '    createCanvas(640, 480);\n' +
+                            '    noStroke();\n' +
+                            '    fill(255);  // 円は白で塗りつぶす\n' +
+                            '}\n' +
+                            '\n' +
+                            'function draw() {\n' +
+                            '    // アルファ値は10\n' +
+                            '    // 背景を徐々に塗り替える\n' +
+                            '    background(0, 10);\n' +
+                            '    ellipse(mouseX, mouseY, 20, 20);\n' +
+                            '}\n';
+
+                    case '7-2':
+                        return 'function setup() {\n' +
+                            '    createCanvas(640, 480);\n' +
+                            '    noStroke();\n' +
+                            '    fill(255);\n' +
+                            '}\n' +
+                            '\n' +
+                            'function draw() {\n' +
+                            '    background(0);\n' +
+                            '    \n' +
+                            '    // グリッドの大きさ\n' +
+                            '    const step = 20;\n' +
+                            '\n' +
+                            '    for (let x = 0; x <= width; x += step) {\n' +
+                            '        for (let y = 0; y <= height; y += step) {\n' +
+                            '\n' +
+                            '            // 各点とポインタとの距離\n' +
+                            '            const d = dist(x, y, mouseX, mouseY);\n' +
+                            '            const r = d / 10;\n' +
+                            '            \n' +
+                            '            // 半径固定の場合（グリッド）\n' +
+                            '            ellipse(x, y, 10, 10);\n' +
+                            '            \n' +
+                            '            // 半径に距離を使った場合\n' +
+                            '            // ellipse(x, y, r, r);\n' +
+                            '        }\n' +
+                            '    }\n' +
+                            '}\n';
+
+                    case '7-3':
+                        return 'function setup() {\n' +
+                            '    createCanvas(640, 480);\n' +
+                            '    background(255);\n' +
+                            '\n' +
+                            '    // 半透明な線を使用する\n' +
+                            '    stroke(0, 0, 0, 30);\n' +
+                            '}\n' +
+                            '\n' +
+                            'function draw() {\n' +
+                            '    const radius = 200;\n' +
+                            '\n' +
+                            '    push();\n' +
+                            '    // 図形を中央に\n' +
+                            '    translate(width/2, height/2);\n' +
+                            '    \n' +
+                            '    // 角度をランダムに決める\n' +
+                            '    var angle1 = random(0, 2 * PI);\n' +
+                            '    \n' +
+                            '    // 決めた角度に対する円周上の点を探す\n' +
+                            '    var xpos1 = radius * cos(angle1);\n' +
+                            '    var ypos1 = radius * sin(angle1);\n' +
+                            '\n' +
+                            '    // 同様にもう一点\n' +
+                            '    var angle2 = random(0, 2 * PI);\n' +
+                            '    var xpos2 = radius * cos(angle2);\n' +
+                            '    var ypos2 = radius * sin(angle2);\n' +
+                            '\n' +
+                            '    // 決めた２点の間で線を引く\n' +
+                            '    line(xpos1, ypos1, xpos2, ypos2);\n' +
+                            '    pop();\n' +
+                            '}\n';
+
+                    case '7-4':
+                        return 'var squareButton;\n' +
+                            'var ellipseButton;\n' +
+                            '\n' +
+                            'var sizeOfSquare;\n' +
+                            'var sizeOfEllipse;\n' +
+                            '\n' +
+                            'var isPushedSquare = false;\n' +
+                            'var isPushedEllipse = false;\n' +
+                            '\n' +
+                            'function setup() {\n' +
+                            '    createCanvas(640, 480);\n' +
+                            '\n' +
+                            '    squareButton = createButton(\'□\');\n' +
+                            '    ellipseButton = createButton(\'○\');\n' +
+                            '\n' +
+                            '    squareButton.position(width/3, height/2);\n' +
+                            '    squareButton.mousePressed(createSquare);\n' +
+                            '    \n' +
+                            '    ellipseButton.position((width/3) * 2, height/2);\n' +
+                            '    ellipseButton.mousePressed(createEllipse);\n' +
+                            '    \n' +
+                            '    ellipseMode(CENTER);\n' +
+                            '    rectMode(CENTER);\n' +
+                            '    \n' +
+                            '    noFill();\n' +
+                            '    stroke(255);\n' +
+                            '}\n' +
+                            '\n' +
+                            'function draw() {\n' +
+                            '    background(0);\n' +
+                            '\n' +
+                            '    if(isPushedSquare) {\n' +
+                            '        rect(width/3, height/2, sizeOfSquare, sizeOfSquare);\n' +
+                            '    }\n' +
+                            '    \n' +
+                            '    if(isPushedEllipse) {\n' +
+                            '        ellipse((width/3) * 2, height/2, sizeOfEllipse);\n' +
+                            '    }\n' +
+                            '    \n' +
+                            '    sizeOfSquare += 5;\n' +
+                            '    sizeOfEllipse += 5;\n' +
+                            '}\n' +
+                            '\n' +
+                            'function createSquare() {\n' +
+                            '    sizeOfSquare = 0;\n' +
+                            '    isPushedSquare = true;\n' +
+                            '}\n' +
+                            '\n' +
+                            'function createEllipse() {\n' +
+                            '    sizeOfEllipse = 0;\n' +
+                            '    isPushedEllipse = true;\n' +
                             '}\n';
 
                     default:
