@@ -8,7 +8,7 @@
             <el-main>
                 <el-row :gutter="20">
                     <el-col :span="12">
-                        <EditArea @update-text="updateText"/>
+                        <EditArea ref="editArea" @update-text="updateText"/>
                     </el-col>
                     <el-col :span="12">
                         <Result ref="result"/>
@@ -17,7 +17,7 @@
 
                 <hr>
 
-                <SampleProjectArea/>
+                <SampleProjectArea @set-code="setCode"/>
 
             </el-main>
 
@@ -49,6 +49,9 @@
         methods: {
             updateText: function (code) {
                 this.$refs.result.updateText(code);
+            },
+            setCode: function (code) {
+                this.$refs.editArea.setCode(code);
             }
         }
     }

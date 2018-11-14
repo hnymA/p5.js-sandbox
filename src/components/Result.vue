@@ -18,6 +18,8 @@
                     '</head>' +
                     '<body>' +
                     '<script src=\'static/p5.js/p5.min.js\'\><\/script>' +
+                    '<script src=\'static/p5.js/addons/p5.dom.min.js\'\><\/script>' +
+                    '<script src=\'static/p5.js/addons/p5.sound.min.js\'\><\/script>' +
                     '<script><\/script>' +
                     '</body>'+
                     '</html>'
