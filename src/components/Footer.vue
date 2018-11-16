@@ -33,7 +33,6 @@
                     p.textAlign(p.CENTER, p.CENTER);
                     p.textSize(20);
                     p.fill(0);
-                    p.text('Copyright © 2018 Kaisei Hanayama. All Rights Reserved.', width/2, height/2)
                 }
             };
             new p5(sketch, 'footerCanvas');
