@@ -27,7 +27,8 @@
         },
         methods: {
             updateText: function(text){
-                this.htmlDoc = this.htmlDoc.replace(/<script>[\s\S]*<\/script>/, '<script>' + text + '<\/script>')
+                const minified = text.replace(/\/\/.*\n/g, '').replace(/\r?\n/g,'');
+                this.htmlDoc = this.htmlDoc.replace(/<script>[\s\S]*<\/script>/, '<script>' + minified + '<\/script>');
                 this.$nextTick(function () {
                     this.$forceUpdate();
                 })
