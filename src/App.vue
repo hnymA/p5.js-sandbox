@@ -2,7 +2,7 @@
     <div id="app">
         <el-container>
             <el-header>
-                <Header/>
+                <Header ref="header"/>
             </el-header>
 
             <el-main>
@@ -22,7 +22,7 @@
             </el-main>
 
             <el-footer>
-                <Footer/>
+                <Footer ref="footer"/>
             </el-footer>
         </el-container>
     </div>
@@ -45,6 +45,12 @@
             Result,
             EditArea,
             SampleProjectArea
+        },
+        mounted(){
+            const KIND = 3;
+            const MODE = Math.ceil(Math.random() * KIND);
+            this.$refs.header.setHeader(MODE);
+            this.$refs.footer.setFooter(MODE);
         },
         methods: {
             updateText: function (code) {
