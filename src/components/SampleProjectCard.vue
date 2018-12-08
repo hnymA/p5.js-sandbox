@@ -724,7 +724,8 @@
                             '}\n';
 
                     case '7-3':
-                        return 'function setup() {\n' +
+                        return '// 参考：https://p5js.org/examples/math-random-chords.html\n' +
+                            'function setup() {\n' +
                             '    createCanvas(640, 480);\n' +
                             '    background(255);\n' +
                             '\n' +
